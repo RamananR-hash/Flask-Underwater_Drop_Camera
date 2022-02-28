@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Stylesheet-->
+	<title>192.168.1.2</title>
+	<style>
+		img {
+			
+			top: 20;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			
+		}
+		.app-button{
+			font-family: 'Times New Roman', Times, serif;
+			background-color: yellow;
+			width: 30%;
+			margin:10px;
+			line-height: 60px;
+		    font-size: 30px;
+		    font-weight: 500;
+		    color: rgb(14, 11, 11);
+		    border-radius: 25px;
+			border-style: solid;
+			border-color: rgb(5, 5, 5);
+			border-width: 5px;
+		}
+		.row{
+			text-align:center;
+			border-color: rgb(5, 5, 5);
+		}
+		h2{
+			font-family: 'Times New Roman', Times, serif;
+			text-align:center;
+		 	font-size: 40px;
+			font-weight: 100;
+			padding: 0px;
+			margin: 0px;
+		 	color: rgb(247, 244, 244);
+		}
+		#Image_OUTPUT{
+			border-radius: 25px;
+			border-style: solid;
+  			border-color: yellow;
+			  border-width: 5px;
+		}
+		.cover {
+		object-fit: cover;
+		width: 1200px;
+		height: 700px;
+		}
+		
+	</style>
+</head>
+<body  style="background-color:rgb(18, 18, 17);text-align:center">
+	<div class="container">
+	<div>
+		<h2>VOTPL CAMERA</h2>
+	</div>	
+	
+
+		<img  id="Image_OUTPUT" class="cover" src="{{ url_for('video_feed') }}" height="40" width="50">
+		<form method="post" action="{{ url_for('tasks') }}">
+			<div class="row">
+				<input class="app-button" type="submit" value="ON/OFF" name="stop" />
+				<input class="app-button" type="submit" value="START/STOP RECORDING" name="rec" />
+				<input class="app-button" type="submit"  value="DOWNLOAD" name="Download" />
+			</div>
+		</form>
+	</div>	
+</body>
+</html>
+
+
